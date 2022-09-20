@@ -25,7 +25,7 @@ output "virtual_machine_id" {
   value = data.azurerm_virtual_machine.ci3.id
 }
 
-data "azurerm_virtual_machine" "ci4 {
+data "azurerm_virtual_machine" "ci4" {
   name                = "ci-vm-3"
   resource_group_name = var.resoucegp
 }
