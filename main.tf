@@ -9,25 +9,25 @@ resource "azurerm_managed_disk" "example" {
 }
 
 resource "azurerm_virtual_machine_data_disk_attachment" "central" {
-  managed_disk_id    = azurerm_managed_disk.example.[count.index].id
+  managed_disk_id    = azurerm_managed_disk.example.id
   virtual_machine_id = data.azurerm_virtual_machine.ci1.id
   lun                = "10"
   caching            = "ReadWrite"
 }
 resource "azurerm_virtual_machine_data_disk_attachment" "central1" {
-  managed_disk_id    = azurerm_managed_disk.example.[count.index].id
+  managed_disk_id    = azurerm_managed_disk.example.id
   virtual_machine_id = data.azurerm_virtual_machine.ci2.id
   lun                = "10"
   caching            = "ReadWrite"
 }
 resource "azurerm_virtual_machine_data_disk_attachment" "central2" {
-  managed_disk_id    = azurerm_managed_disk.example.[count.index].id
+  managed_disk_id    = azurerm_managed_disk.example.id
   virtual_machine_id = data.azurerm_virtual_machine.ci3.id
   lun                = "10"
   caching            = "ReadWrite"
 }
 resource "azurerm_virtual_machine_data_disk_attachment" "central3" {
-  managed_disk_id    = azurerm_managed_disk.example.[count.index].id
+  managed_disk_id    = azurerm_managed_disk.example.id
   virtual_machine_id = data.azurerm_virtual_machine.ci4.id
   lun                = "10"
   caching            = "ReadWrite"
