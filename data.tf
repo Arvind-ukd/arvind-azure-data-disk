@@ -1,4 +1,9 @@
 data "azurerm_virtual_machine" "ci1" {
+  count= 4 
+  index =   "${count.index}"
+  filter  {
+    name = "ci"
+  }
   name               = ["ci-vm-0", "ci-vm-1", "ci-vm-2", "ci-vm-3"]
   #name1               = "ci-vm-1"
   #name2               = "ci-vm-2"
@@ -6,9 +11,9 @@ data "azurerm_virtual_machine" "ci1" {
   resource_group_name = var.resoucegp
 }
 
-#output "virtual_machine_id" {
- # value = data.azurerm_virtual_machine.ci1.id
-#}
+output "virtual_machine_id" {
+  value = data.azurerm_virtual_machine.ci1.*.id
+}
 
 #data "azurerm_virtual_machine" "ci2" {
  # name           = "ci-vm-1"
