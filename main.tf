@@ -8,27 +8,27 @@ resource "azurerm_managed_disk" "example" {
   disk_size_gb         = 10
 }
 
-resource "azurerm_virtual_machine_data_disk_attachment" "ci-vm-0 {
-  managed_disk_id    = azurerm_managed_disk.example.id
-  virtual_machine_id = data.azurerm_virtual_machine.ci-vm-0.id
+resource "azurerm_virtual_machine_data_disk_attachment" "central" {
+  managed_disk_id    = azurerm_managed_disk.example.[count.index].id
+  virtual_machine_id = data.azurerm_virtual_machine.ci1.id
   lun                = "10"
   caching            = "ReadWrite"
 }
-resource "azurerm_virtual_machine_data_disk_attachment" "ci-vm-1 {
-  managed_disk_id    = azurerm_managed_disk.example.id
-  virtual_machine_id = data.azurerm_virtual_machine.ci-vm-1.id
+resource "azurerm_virtual_machine_data_disk_attachment" "central1" {
+  managed_disk_id    = azurerm_managed_disk.example.[count.index].id
+  virtual_machine_id = data.azurerm_virtual_machine.ci2.id
   lun                = "10"
   caching            = "ReadWrite"
 }
-resource "azurerm_virtual_machine_data_disk_attachment" "ci-vm-2 {
-  managed_disk_id    = azurerm_managed_disk.example.id
-  virtual_machine_id = data.azurerm_virtual_machine.ci-vm-2.id
+resource "azurerm_virtual_machine_data_disk_attachment" "central2" {
+  managed_disk_id    = azurerm_managed_disk.example.[count.index].id
+  virtual_machine_id = data.azurerm_virtual_machine.ci3.id
   lun                = "10"
   caching            = "ReadWrite"
 }
-resource "azurerm_virtual_machine_data_disk_attachment" "ci-vm-3 {
-  managed_disk_id    = azurerm_managed_disk.example.id
-  virtual_machine_id = data.azurerm_virtual_machine.ci-vm-3.id
+resource "azurerm_virtual_machine_data_disk_attachment" "central3" {
+  managed_disk_id    = azurerm_managed_disk.example.[count.index].id
+  virtual_machine_id = data.azurerm_virtual_machine.ci4.id
   lun                = "10"
   caching            = "ReadWrite"
 }
