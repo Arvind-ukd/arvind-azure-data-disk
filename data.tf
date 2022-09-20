@@ -4,7 +4,7 @@ data "azurerm_virtual_machine" "ci1" {
   filter  {
     name = "ci"
   }
-  name               = ["ci-vm-0", "ci-vm-1", "ci-vm-2", "ci-vm-3"]
+  #name               = ["ci-vm-0", "ci-vm-1", "ci-vm-2", "ci-vm-3"]
   #name1               = "ci-vm-1"
   #name2               = "ci-vm-2"
   #name3               = "ci-vm-3"
