@@ -1,5 +1,5 @@
 data "azurerm_virtual_machine" "ci1" {
-  name                = "ci-vm-0"
+  name               = "ci-vm-0"
   resource_group_name = var.resoucegp
 }
 
@@ -8,7 +8,7 @@ output "virtual_machine_id" {
 }
 
 data "azurerm_virtual_machine" "ci2" {
-  name                = "ci-vm-1"
+  name1              = "ci-vm-1"
   resource_group_name = var.resoucegp
 }
 
@@ -17,7 +17,7 @@ output "virtual_machine_id" {
 }
 
 data "azurerm_virtual_machine" "ci3" {
-  name                = "ci-vm-2"
+  name2              = "ci-vm-2"
   resource_group_name = var.resoucegp
 }
 
@@ -26,7 +26,7 @@ output "virtual_machine_id" {
 }
 
 data "azurerm_virtual_machine" "ci4" {
-  name                = "ci-vm-3"
+  name3               = "ci-vm-3"
   resource_group_name = var.resoucegp
 }
 
